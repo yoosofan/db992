@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 /*
 typedef struct address{
     char city[50];
@@ -17,31 +17,31 @@ typedef struct producer{
 }producer;
 
 */
-typedef struct customer{
+struct Customer{
     int code;
     char bday[10];
     int phonenum;
     char first_name[50];
     char last_name[50];
-}Customer;
+};
 
-typedef struct goods{
+struct Good{
     int code;
     int number;
     float price;
     char name[1000];
     char extra_info[1000];
 
-}Good;
+};
 
-typedef struct sell{
+struct Sell{
     int code;
     int customer_code;
     int purchase_code[100];
     int purchase_number;
     float final_price;
     char date[10];
-}Sell;
+};
 
 int main(){
 
