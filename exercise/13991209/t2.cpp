@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <conio.h>
+#include <cstdio>
+#include <cstdlib>
+
 struct product
 {
   int code_of_product;
