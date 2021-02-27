@@ -72,7 +72,7 @@ struct person addMember(){
     printf("\nEnter family name: ");
     scanf("%s",p.fname);
     printf("\nEnter balance acount: ");
-    scanf("%d",&p.balance);
+    scanf("%lf",&p.balance);
     printf("\nrecord saved");
     printf("\n\nEnter any key");
     system("cls");
@@ -114,6 +114,7 @@ struct Buy addBuy(){
 }
 void showMember(struct person p[]) {
 	system("cls");
+  int i;
 	while(p[i]!=null)
 	{
   		printf("\n\n\n YOUR RECORD IS\n\n ");
@@ -151,3 +152,51 @@ void showKala(struct buy b[]) {
     system("cls");
 	menu();
 }
+
+/*
+ * 
+ * 
+3991209$ 
+13991209$ g++ jahantab_javad_9821164207_hw2.cpp 
+jahantab_javad_9821164207_hw2.cpp: In function ‘kala addKala()’:
+jahantab_javad_9821164207_hw2.cpp:89:13: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘double*’ [-Wformat=]
+   89 |     scanf("%d",&k.price);
+      |            ~^  ~~~~~~~~
+      |             |  |
+      |             |  double*
+      |             int*
+      |            %le
+jahantab_javad_9821164207_hw2.cpp: In function ‘Buy addBuy()’:
+jahantab_javad_9821164207_hw2.cpp:105:13: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘double*’ [-Wformat=]
+  105 |     scanf("%d",&b.price);
+      |            ~^  ~~~~~~~~
+      |             |  |
+      |             |  double*
+      |             int*
+      |            %le
+jahantab_javad_9821164207_hw2.cpp: In function ‘void showMember(person*)’:
+jahantab_javad_9821164207_hw2.cpp:118:14: error: ‘null’ was not declared in this scope
+  118 |  while(p[i]!=null)
+      |              ^~~~
+jahantab_javad_9821164207_hw2.cpp:121:121: error: ‘struct person’ has no member named ‘money’
+  121 | =%s\nmoney : %d\nage : %d",p[i].num,p[i].name,p[i].fname,p[i].money,p[i].age);
+      |                                                               ^~~~~
+
+jahantab_javad_9821164207_hw2.cpp: In function ‘void showKala(kala*)’:
+jahantab_javad_9821164207_hw2.cpp:131:10: error: ‘i’ was not declared in this scope
+  131 |  while(k[i]!=null)
+      |          ^
+jahantab_javad_9821164207_hw2.cpp:131:14: error: ‘null’ was not declared in this scope
+  131 |  while(k[i]!=null)
+      |              ^~~~
+jahantab_javad_9821164207_hw2.cpp: In function ‘void showKala(buy*)’:
+jahantab_javad_9821164207_hw2.cpp:144:10: error: ‘i’ was not declared in this scope
+  144 |  while(b[i]!=null)
+      |          ^
+jahantab_javad_9821164207_hw2.cpp:144:14: error: ‘null’ was not declared in this scope
+  144 |  while(b[i]!=null)
+      |              ^~~~
+13991209$ 
+
+
+*/
