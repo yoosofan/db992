@@ -73,7 +73,6 @@ int main(){
    return 0;
 }
 
-
 void panel(storage store, customerlist personlist, salelist sale;){
    int loopVAR == 1;
    int input;
