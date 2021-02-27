@@ -59,7 +59,6 @@ int main(){
     Sell sell[10];
 
     while(t){
-        system("cls");
         printf("1 - Add goods\n");
         printf("2 - Add a customer\n");
         printf("3 - Sales\n");
@@ -76,7 +75,6 @@ int main(){
         switch (req){
 
             case 1:
-                system("cls");
                 printf("Add a new good:\n");
 
                 goods_number++;
@@ -101,7 +99,6 @@ int main(){
                 break;
 
             case 2:
-                system("cls");
 
                 customer_number++;
                 printf("Code:");
@@ -123,7 +120,6 @@ int main(){
                 break;
 
             case 3:
-                system("cls");
                 sell_number++;
                 int m=0;
                 int p=0;
@@ -182,7 +178,6 @@ int main(){
                 break;
 
             case 4:
-                system("cls");
                 printf("List of goods\n");
                 for(int i=1;i<=goods_number;i++){
                     printf("%d - Code :%d\n",i,good[i].code);
@@ -197,7 +192,6 @@ int main(){
                 break;
 
             case 5:
-                system("cls");
 
                 printf("List of customers\n");
                 for(int i=1;i<=customer_number;i++){
@@ -214,7 +208,6 @@ int main(){
                 break;
 
             case 6:
-                system("cls");
 
                 printf("List of Sells\n");
                 for(int i=1;i<=sell_number;i++){
@@ -299,3 +292,145 @@ int main(){
     return 0;
 
 }
+/*
+13991209$ g++ db2.cpp 
+db2.cpp: In function ‘int main()’:
+db2.cpp:88:25: warning: format ‘%s’ expects argument of type ‘char*’, but argument 2 has type ‘char (*)[1000]’ [-Wformat=]
+   88 |                 scanf("%s",&good[goods_number].name);
+      |                        ~^  ~~~~~~~~~~~~~~~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[1000]
+      |                         char*
+db2.cpp:94:25: warning: format ‘%s’ expects argument of type ‘char*’, but argument 2 has type ‘char (*)[1000]’ [-Wformat=]
+   94 |                 scanf("%s",&good[goods_number].extra_info);
+      |                        ~^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[1000]
+      |                         char*
+db2.cpp:110:25: warning: format ‘%s’ expects argument of type ‘char*’, but argument 2 has type ‘char (*)[50]’ [-Wformat=]
+  110 |                 scanf("%s",&customer[customer_number].first_name);
+      |                        ~^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[50]
+      |                         char*
+db2.cpp:112:25: warning: format ‘%s’ expects argument of type ‘char*’, but argument 2 has type ‘char (*)[50]’ [-Wformat=]
+  112 |                 scanf("%s",&customer[customer_number].last_name);
+      |                        ~^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[50]
+      |                         char*
+db2.cpp:116:25: warning: format ‘%s’ expects argument of type ‘char*’, but argument 2 has type ‘char (*)[10]’ [-Wformat=]
+  116 |                 scanf("%s",&customer[customer_number].bday);
+      |                        ~^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[10]
+      |                         char*
+db2.cpp:133:25: warning: format ‘%s’ expects argument of type ‘char*’, but argument 2 has type ‘char (*)[10]’ [-Wformat=]
+  133 |                 scanf("%s",&sell[sell_number].date);
+      |                        ~^  ~~~~~~~~~~~~~~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[10]
+      |                         char*
+db2.cpp:159:61: error: invalid conversion from ‘char (*)[1000]’ to ‘char’ [-fpermissive]
+  159 |                                         *good[i].extra_info=&good[i+1].extra_info;
+      |                                                             ^~~~~~~~~~~~~~~~~~~~~
+      |                                                             |
+      |                                                             char (*)[1000]
+db2.cpp:160:55: error: invalid conversion from ‘char (*)[1000]’ to ‘char’ [-fpermissive]
+  160 |                                         *good[i].name=&good[i+1].name;
+      |                                                       ^~~~~~~~~~~~~~~
+      |                                                       |
+      |                                                       char (*)[1000]
+db2.cpp:184:18: error: jump to case label
+  184 |             case 4:
+      |                  ^
+db2.cpp:129:21: note:   crosses initialization of ‘int p’
+  129 |                 int p=0;
+      |                     ^
+db2.cpp:128:21: note:   crosses initialization of ‘int m’
+  128 |                 int m=0;
+      |                     ^
+db2.cpp:199:18: error: jump to case label
+  199 |             case 5:
+      |                  ^
+db2.cpp:129:21: note:   crosses initialization of ‘int p’
+  129 |                 int p=0;
+      |                     ^
+db2.cpp:128:21: note:   crosses initialization of ‘int m’
+  128 |                 int m=0;
+      |                     ^
+db2.cpp:216:18: error: jump to case label
+  216 |             case 6:
+      |                  ^
+db2.cpp:129:21: note:   crosses initialization of ‘int p’
+  129 |                 int p=0;
+      |                     ^
+db2.cpp:128:21: note:   crosses initialization of ‘int m’
+  128 |                 int m=0;
+      |                     ^
+db2.cpp:222:49: warning: format ‘%s’ expects argument of type ‘char*’, but argument 2 has type ‘int’ [-Wformat=]
+  222 |                     printf("    customer code :%s\n",sell[i].customer_code);
+      |                                                ~^    ~~~~~~~~~~~~~~~~~~~~~
+      |                                                 |            |
+      |                                                 char*        int
+      |                                                %d
+db2.cpp:237:18: error: jump to case label
+  237 |             case 7:
+      |                  ^
+db2.cpp:129:21: note:   crosses initialization of ‘int p’
+  129 |                 int p=0;
+      |                     ^
+db2.cpp:128:21: note:   crosses initialization of ‘int m’
+  128 |                 int m=0;
+      |                     ^
+db2.cpp:259:18: error: jump to case label
+  259 |             case 8:
+      |                  ^
+db2.cpp:240:21: note:   crosses initialization of ‘int n’
+  240 |                 int n=0;
+      |                     ^
+db2.cpp:129:21: note:   crosses initialization of ‘int p’
+  129 |                 int p=0;
+      |                     ^
+db2.cpp:128:21: note:   crosses initialization of ‘int m’
+  128 |                 int m=0;
+      |                     ^
+db2.cpp:263:25: warning: format ‘%s’ expects argument of type ‘char*’, but argument 2 has type ‘char (*)[10]’ [-Wformat=]
+  263 |                 scanf("%s",&s);
+      |                        ~^  ~~
+      |                         |  |
+      |                         |  char (*)[10]
+      |                         char*
+db2.cpp:285:18: error: jump to case label
+  285 |             case 9:
+      |                  ^
+db2.cpp:264:21: note:   crosses initialization of ‘int e’
+  264 |                 int e=1;
+      |                     ^
+db2.cpp:240:21: note:   crosses initialization of ‘int n’
+  240 |                 int n=0;
+      |                     ^
+db2.cpp:129:21: note:   crosses initialization of ‘int p’
+  129 |                 int p=0;
+      |                     ^
+db2.cpp:128:21: note:   crosses initialization of ‘int m’
+  128 |                 int m=0;
+      |                     ^
+db2.cpp:290:13: error: jump to case label
+  290 |             default:
+      |             ^~~~~~~
+db2.cpp:264:21: note:   crosses initialization of ‘int e’
+  264 |                 int e=1;
+      |                     ^
+db2.cpp:240:21: note:   crosses initialization of ‘int n’
+  240 |                 int n=0;
+      |                     ^
+db2.cpp:129:21: note:   crosses initialization of ‘int p’
+  129 |                 int p=0;
+      |                     ^
+db2.cpp:128:21: note:   crosses initialization of ‘int m’
+  128 |                 int m=0;
+      |                     ^
+13991209$ 
+
+ */
