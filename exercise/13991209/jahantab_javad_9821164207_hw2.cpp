@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include<windows.h>
+#include <cstdio>
+#include <cstdlib>
 void menu();
 struct person addMember();
 struct kala addKala();
@@ -20,7 +20,7 @@ struct kala {
 	int num;
 };
 struct Buy {
-	int numFactor;l
+	int numFactor;
 	int numPerson;
 	int numKala;
 	double price;
