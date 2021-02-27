@@ -1,7 +1,8 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-typedef struct product{
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+
+struct product{
 	char name[100];
 	float price;
 	float date_of_production ;
@@ -13,22 +14,22 @@ typedef struct product{
 	char color[20];
 	int number;
 
-}product;
-typedef struct Invoice{
+};
+
+struct Invoice{
 	float customer_number;
 	float product_number[];
 	int number[];
 	float date;
+};
 
-}Invoice;
-typedef struct customer{
+struct customer{
 	char name[50];
 	char family[50];
 	long int phone;
 	int cash;
 	int id;
-
-}customer;
+};
 
 //////////////////////////////////////////////////////////////////////////////////////
 
