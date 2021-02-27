@@ -5,7 +5,7 @@ int main()
     int customers[10000];
     int sells[10000];
 
-}
+};
 struct customer{
     char first_name[50];
     char last_name[50];
@@ -13,7 +13,7 @@ struct customer{
     char email_address[50];
     float balance;
 
-}
+};
 struct goods{
     char name[60];
     float prices;
