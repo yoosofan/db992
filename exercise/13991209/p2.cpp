@@ -18,8 +18,8 @@ struct product{
 
 struct Invoice{
 	float customer_number;
-	float product_number[];
-	int number[];
+	float product_number[100];
+	int number[100];
 	float date;
 };
 
@@ -157,9 +157,6 @@ int main(){
 
 /*
 3991209$ g++ p2.cpp 
-p2.cpp:21:8: error: flexible array member ‘Invoice::product_number’ not at end of ‘struct Invoice’
-   21 |  float product_number[];
-      |        ^~~~~~~~~~~~~~
 p2.cpp:48:64: error: expected identifier before ‘)’ token
    48 | void menu (product pro,int a,customer c,int b,Invoice i,int ii,){
       |                                                                ^
@@ -220,17 +217,17 @@ p2.cpp:104:10: warning: format ‘%s’ expects argument of type ‘char*’, bu
       |          |  char (*)[50]
       |          char*
 p2.cpp: In function ‘Invoice add_Invoice()’:
-p2.cpp:121:11: warning: format ‘%f’ expects argument of type ‘float*’, but argument 2 has type ‘float (*)[]’ [-Wformat=]
+p2.cpp:121:11: warning: format ‘%f’ expects argument of type ‘float*’, but argument 2 has type ‘float (*)[100]’ [-Wformat=]
   121 |   scanf("%f",&i.product_number);
       |          ~^  ~~~~~~~~~~~~~~~~~
       |           |  |
-      |           |  float (*)[]
+      |           |  float (*)[100]
       |           float*
-p2.cpp:123:11: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘int (*)[]’ [-Wformat=]
+p2.cpp:123:11: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘int (*)[100]’ [-Wformat=]
   123 |   scanf("%d",&i.number);
       |          ~^  ~~~~~~~~~
       |           |  |
-      |           |  int (*)[]
+      |           |  int (*)[100]
       |           int*
 p2.cpp: In function ‘void List_of_products(product*)’:
 p2.cpp:131:15: error: expected ‘;’ before ‘++’ token
@@ -313,6 +310,7 @@ p2.cpp:48:6: note: candidate: ‘void menu(product, int, customer, int, Invoice,
       |      ^~~~
 p2.cpp:48:6: note:   candidate expects 7 arguments, 6 provided
 13991209$ 
+
 
 
 */
