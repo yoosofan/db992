@@ -46,7 +46,7 @@ int main()
     menu();
 }
 
-void menu(){
+void menu(void){
     int select;
     printf("1.Add product\n2.Add customer\n3.Add sale\n4.List of products\n5.List of customers\n6.Sales list\n7.Information of a specific invoice\n8.One day sales information");
     printf("\nEnter your selection : ");
