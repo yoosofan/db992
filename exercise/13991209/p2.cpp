@@ -45,7 +45,7 @@ void Display_invoice_by_date(void);
 void Exit (void);
 
 ///////////////////////////////////////////////////////////////////////////////////////
-void menu (product pro,int a,customer c,int b,Invoice i,int ii,){
+void menu (product pro,int a,customer c,int b,Invoice i,int ii){
 	printf("Enter number ");
 	printf("1 for add product\n");
 	printf("2 for add customer\n");
