@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cctype>
 
 void menu(void);
 void addCustomer(void);
@@ -83,9 +83,9 @@ void addCustomer(){
     printf("Enter customer id : ");
     scanf("%d",&newC.id);
     printf("Enter customer name : ");
-    scanf("%s",&newC.name);
+    scanf("%s",newC.name);
     printf("Enter customer phone number : ");
-    scanf("%s",&newC.phoneNumber);
+    scanf("%s",newC.phoneNumber);
     custarr[ctrCustomer] = newC;
     ctrCustomer += 1;
     menu();
@@ -96,7 +96,7 @@ void addProduct(){
     printf("Enter product id : ");
     scanf("%d",&newP.id);
     printf("Enter product name : ");
-    scanf("%s",&newP.name);
+    scanf("%s",newP.name);
     printf("Enter product price : ");
     scanf("%d",&newP.price);
     printf("Enter product discount : ");
@@ -117,7 +117,7 @@ void addsale(){
     printf("Enter sale number : ");
     scanf("%d",&newS.number);
     printf("Enter sale date [****/**/**]: ");
-    scanf("%s",&newS.date);
+    scanf("%s",newS.date);
     salearr[ctrSale] = newS;
     ctrSale += 1;
     menu();
@@ -176,7 +176,7 @@ void specificInvoice(){
 void oneDaySales(){
     char onedate[10];
     printf("Enter date : ");
-    scanf("%s",&onedate);
+    scanf("%s",onedate);
     for(int i=0;i<ctrSale;i++){
         if(strcmp(onedate,salearr[i].date) == 0){
             printf("sale factor number : %d\n",salearr[i].factorNum);
