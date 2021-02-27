@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-typedef struct Product {
+struct product {
    char title[100];
    float price;
    int number;                  /*Number of products available*/
@@ -18,39 +18,39 @@ typedef struct Product {
    float discountRate;          /*Discount for the product*/
    char ingredients[1000];      /*Materials of which the product is composed*/
    char appleHealth[1000];      /*Apple Health Information*/
-}product;
+};
 
-typedef struct Storage{
+struct storage{
    product cellar[1000];
    int size = 1000;
    int numFullHouse = 0;      /*number of full houses in storage*/
-}storage;
+};
 
-typedef struct Customer{
+struct customer{
    char name[50];
    int phoneNumber;
-}customer;
+};
 
-typedef struct CustomerList{
+struct customerlist{
    customer client[1000];
    int size = 1000;
    int numFullHouse = 0;      /*number of full houses in the list*/
-}customerlist;
+};
 
-typedef struct SaleCart{
+struct salecart{
    customer person;            /*The Buyer*/
    int indexOfObjects[100];    /*indexes of products he/she is buying*/
    char time[5];
    char date[10];
    float wholePrice;
-}salecart;
+};
 
-typedef struct SaleList
+struct salelist
 {
    salecart allCarts[1000];
    int size = 1000;
    int numFullHouse = 0;      /*number of full houses in the list*/
-}salelist;
+};
 
 
 
